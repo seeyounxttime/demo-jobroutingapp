@@ -12,6 +12,9 @@ import Typography from "@mui/material/Typography";
 import AuthContext from "./contexts/AuthContext";
 import { useNavigate } from "react-router-dom";
 
+import avatar from "../assets/img/avatar.png";
+import arrow from "../assets/img/arrow-right.png";
+
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
   borderRadius: theme.shape.borderRadius,
@@ -132,7 +135,8 @@ export default function SearchAppBar() {
                   sx={{ ml: 2, right: 0, fontSize: "1rem", gap: "5px" }}
                   onClick={handleClose}
                 >
-                  <img src="" alt="" width="32px" height="32px" /> {auth?.user}
+                  <img src={avatar} alt="" width="32px" height="32px" />{" "}
+                  {auth?.user}
                 </IconButton>
                 <IconButton
                   size="large"
@@ -142,7 +146,7 @@ export default function SearchAppBar() {
                   sx={{ ml: 2, right: 0, fontSize: "1rem", gap: "5px" }}
                   onClick={handleClose}
                 >
-                  <img src="" alt="" width="25px" height="25px" /> Logout
+                  <img src={arrow} alt="" width="25px" height="25px" /> Logout
                 </IconButton>
               </>
             ) : (
@@ -154,7 +158,7 @@ export default function SearchAppBar() {
                 sx={{ ml: 2, right: 0, fontSize: "1rem", gap: "5px" }}
                 onClick={handleOpen}
               >
-                <img src="" alt="" width="25px" height="25px" /> Login
+                <img src={arrow} alt="" width="25px" height="25px" /> Login
               </IconButton>
             )}
           </Box>
